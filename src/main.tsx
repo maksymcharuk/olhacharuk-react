@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./routes/root";
+import Root from "./app/root";
 import ErrorPage from "./error.page";
-import HomePage from "./routes/home.page";
-import WorksPage from "./routes/works.page";
-import "./index.css";
+import HomePage from "./app/pages/home.page";
+import WorksPage from "./app/pages/works.page";
+import "./index.scss";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       {
-        path: "works",
+        path: "work",
         element: <WorksPage />,
       },
     ],
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  // <React.StrictMode>
+  <RouterProvider router={router} />
+  // </React.StrictMode>
 );

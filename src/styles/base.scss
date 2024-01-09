@@ -1,0 +1,47 @@
+html {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-size: 0.75rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.font-xxl {
+  font-size: $font-size-xxl;
+}
