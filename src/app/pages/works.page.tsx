@@ -1,31 +1,31 @@
 import { useEffect, useState } from "react";
-import { getProjects } from "../../services/projects.service";
-import { IProject } from "../../interfaces/project.interface";
 import Project from "../components/project.component";
 import { IBaseStrapiEntity } from "../../interfaces/base-strapi-entity.interface";
+import { getWorkPage } from "../../services/pages.services";
+import { IWorkPage } from "../../interfaces/work-page.interface";
 
 export default function WorksPage() {
-  const [projects, setProjects] = useState<
-    IBaseStrapiEntity<IProject>[] | null
-  >(null);
+  const [workPage, setWorkPage] = useState<IBaseStrapiEntity<IWorkPage> | null>(
+    null
+  );
 
   useEffect(() => {
-    getProjects().then((data) => {
-      setProjects(data);
+    getWorkPage().then((data) => {
+      setWorkPage(data);
     });
   }, []);
 
-  if (!projects) {
+  if (!workPage) {
     return <>Loading</>;
   }
 
-  if (projects.length === 0) {
+  if (workPage.attributes.projects.data.length === 0) {
     return <>No projects</>;
   }
 
   return (
     <>
-      {projects.map((project) => (
+      {workPage.attributes.projects.data.map((project) => (
         <Project key={project.id} project={project} />
       ))}
     </>
