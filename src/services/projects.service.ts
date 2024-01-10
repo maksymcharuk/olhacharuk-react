@@ -1,9 +1,11 @@
 import axios from "axios";
-import { Project } from "../interfaces/project.interface";
-
-const baseURL = "http://localhost:1337/api";
+import { IProject } from "../interfaces/project.interface";
+import { IBaseStrapiCollectionResponse } from "../interfaces/base-strapi-response.interface";
+import { baseURL } from "../configs/constants";
 
 export const getProjects = async () => {
-  const { data } = await axios.get<Project[]>(`${baseURL}/projects`);
-  return data;
+  const { data } = await axios.get<IBaseStrapiCollectionResponse<IProject>>(
+    `${baseURL}/projects?populate=*`
+  );
+  return data.data;
 };

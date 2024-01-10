@@ -1,5 +1,7 @@
 $primary-color: #0d1dff;
 
 $font-size-base: 1rem;
-$font-size-xxl: 2.70rem;
-$font-size-xl: 2.67rem;
+$dynamic-font-size: calc(#{$font-size-base} + 0.3vw);
+$dynamic-font-size-l: calc(#{$font-size-base} + 0.5vw);
+
+$sidebar-width: 15rem;

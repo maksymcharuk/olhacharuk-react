@@ -1,0 +1,14 @@
+.experience {
+  &__company {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  &__position-list {}
+
+  &__position-list-item {
+    & + & {
+      margin-top: 0.5rem;
+    }
+  }
+}

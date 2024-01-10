@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { getProjects } from "../../services/projects.service";
-import { Project } from "../../interfaces/project.interface";
+import { IProject } from "../../interfaces/project.interface";
+import Project from "../components/project.component";
+import { IBaseStrapiEntity } from "../../interfaces/base-strapi-entity.interface";
 
 export default function WorksPage() {
-  const [projects, setProjects] = useState<Project[]>([]);
-
-  console.log(projects);
+  const [projects, setProjects] = useState<
+    IBaseStrapiEntity<IProject>[] | null
+  >(null);
 
   useEffect(() => {
     getProjects().then((data) => {
@@ -14,12 +15,19 @@ export default function WorksPage() {
     });
   }, []);
 
+  if (!projects) {
+    return <>Loading</>;
+  }
+
+  if (projects.length === 0) {
+    return <>No projects</>;
+  }
+
   return (
     <>
-      <>
-        <div>Works page</div>
-        <Link to={"/"}>Home</Link>
-      </>
+      {projects.map((project) => (
+        <Project key={project.id} project={project} />
+      ))}
     </>
   );
 }

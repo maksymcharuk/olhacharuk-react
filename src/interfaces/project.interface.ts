@@ -1,8 +1,15 @@
-import { IBaseStrapiEntity } from "./base-strapi-entity.interface";
+import { IBaseStrapiDataCollection } from "./base-strapi-data.interface";
+import { IImage } from "./image.interface";
+import { ILink } from "./link.interface";
+import { IListKeyValueItem } from "./list-key-value.interface";
+import { IRichBlock } from "./rich-block.interface";
 
-export type Project = IBaseStrapiEntity<{
+export type IProject = {
   id: number;
   name: string;
-  description: string;
-  images: string[];
-}>;
+  description: IRichBlock;
+  company: string;
+  images: IBaseStrapiDataCollection<IImage>;
+  details: IListKeyValueItem[];
+  links: ILink[];
+};

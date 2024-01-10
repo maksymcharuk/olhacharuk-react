@@ -9,6 +9,15 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
+  font-family: "PPNeueMontreal", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+
+  font-feature-settings: "liga" 0, "rlig" 0, "dlig" 0, "hlig" 0, "smcp" 0;
+  -webkit-line-break: after-white-space;
+  white-space: pre-wrap;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -30,8 +39,12 @@ a {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  width: 800px;
-  margin: 0 auto;
+  margin: 0 2rem;
+}
+
+.main {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .centered {
@@ -42,6 +55,6 @@ a {
   align-items: center;
 }
 
-.font-xxl {
-  font-size: $font-size-xxl;
+.dynamic-font-size {
+  font-size: calc(2.70rem + 0.3vw);
 }

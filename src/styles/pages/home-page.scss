@@ -1,0 +1,14 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-size: 3.5vw;
+    width: 65%;
+    margin: -20vh auto 0;
+    font-weight: 600;
+  }
+}

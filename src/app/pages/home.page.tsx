@@ -1,10 +1,31 @@
+import { useEffect, useState } from "react";
+import { IHomePage } from "../../interfaces/home-page.interface";
+import { IBaseStrapiEntity } from "../../interfaces/base-strapi-entity.interface";
+import { getHomePage } from "../../services/pages.services";
+
 export default function HomePage() {
+  const [homePage, setHomePage] = useState<IBaseStrapiEntity<IHomePage> | null>(
+    null
+  );
+
+  useEffect(() => {
+    getHomePage().then((data) => {
+      setHomePage(data);
+    });
+  }, []);
+
+  if (!homePage) {
+    return <>Loading</>;
+  }
+
   return (
-    <div className="centered font-xxl">
-      Graphic designer from Kyiv currently based in New York. I create
-      consistent visual brand language filled with meaning and believe that
-      creativity comes from curiosity and thrives under restrictions. Focused on
-      brand identity, packaging, illustration, and digital design.
+    <div className="home-page">
+      <h2
+        className="home-page__title"
+        dangerouslySetInnerHTML={{
+          __html: homePage.attributes.content[0].children[0].text,
+        }}
+      ></h2>
     </div>
   );
 }

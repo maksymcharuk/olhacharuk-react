@@ -1,5 +1,15 @@
+// Base
 @import "./variables.scss";
 @import "./reset.scss";
+@import "./typography.scss";
 @import "./base.scss";
 
-@import "./header.scss";
+// Components
+@import "./components/header.scss";
+@import "./components/project.scss";
+@import "./components/experience.scss";
+@import "./components/position.scss";
+
+// Pages
+@import "./pages/home-page.scss";
+@import "./pages/info-page.scss";

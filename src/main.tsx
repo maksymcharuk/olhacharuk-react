@@ -6,6 +6,7 @@ import ErrorPage from "./error.page";
 import HomePage from "./app/pages/home.page";
 import WorksPage from "./app/pages/works.page";
 import "./index.scss";
+import InfoPage from "./app/pages/info.page";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "work",
         element: <WorksPage />,
+      },
+      {
+        path: "info",
+        element: <InfoPage />,
       },
     ],
   },

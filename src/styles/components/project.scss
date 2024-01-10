@@ -1,0 +1,66 @@
+.project {
+  display: flex;
+  margin-bottom: 8rem;
+
+  &__main {
+    flex: 1 1 auto;
+  }
+
+  &__sidebar {
+    font-size: $dynamic-font-size;
+    flex: 0 0 $sidebar-width;
+    margin-left: 1rem;
+  }
+
+  &__images {
+
+    img {
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__description {
+    font-size: $dynamic-font-size;
+    margin-top: 1rem;
+    display: flex;
+  }
+
+  &__description-column {
+    flex: 1 1 50%;
+
+    & + & {
+      margin-left: 2rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__name {
+    font-size: $dynamic-font-size-l;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__company {
+    margin-bottom: 1rem;
+  }
+
+  &__details {
+    margin-bottom: 1.5rem;
+  }
+
+  &__details-item {
+    margin-bottom: 1rem;
+  }
+
+  &__details-item-title {
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+
+  &__details-item-subtitle {}
+}

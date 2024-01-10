@@ -1,0 +1,19 @@
+import axios from "axios";
+import { IBaseStrapiResponse } from "../interfaces/base-strapi-response.interface";
+import { baseURL } from "../configs/constants";
+import { IHomePage } from "../interfaces/home-page.interface";
+import { IInfoPage } from "../interfaces/info-page.interface";
+
+export const getHomePage = async () => {
+  const { data } = await axios.get<IBaseStrapiResponse<IHomePage>>(
+    `${baseURL}/home-page?populate=*`
+  );
+  return data.data;
+};
+
+export const getInfoPage = async () => {
+  const { data } = await axios.get<IBaseStrapiResponse<IInfoPage>>(
+    `${baseURL}/info-page?populate=deep`
+  );
+  return data.data;
+};
