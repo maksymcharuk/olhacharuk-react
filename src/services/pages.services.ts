@@ -7,7 +7,7 @@ import { IWorkPage } from "../interfaces/work-page.interface";
 
 export const getHomePage = async () => {
   const { data } = await axios.get<IBaseStrapiResponse<IHomePage>>(
-    `${baseURL}/home-page?populate=*`
+    `${baseURL}/home-page?populate=deep`
   );
   return data.data;
 };

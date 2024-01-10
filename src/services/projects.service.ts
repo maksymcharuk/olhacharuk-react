@@ -5,7 +5,7 @@ import { baseURL } from "../configs/constants";
 
 export const getProjects = async () => {
   const { data } = await axios.get<IBaseStrapiCollectionResponse<IProject>>(
-    `${baseURL}/projects?populate=*`
+    `${baseURL}/projects?populate=deep`
   );
   return data.data;
 };

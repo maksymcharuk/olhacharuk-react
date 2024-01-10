@@ -1,18 +1,22 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IHomePage } from "../../interfaces/home-page.interface";
-import { IBaseStrapiEntity } from "../../interfaces/base-strapi-entity.interface";
 import { getHomePage } from "../../services/pages.services";
+import { StoreContext } from "../root";
 
 export default function HomePage() {
-  const [homePage, setHomePage] = useState<IBaseStrapiEntity<IHomePage> | null>(
-    null
-  );
+  const [homePage, setHomePage] = useState<IHomePage | null>(null);
+  const { store, setStore } = useContext(StoreContext);
 
   useEffect(() => {
-    getHomePage().then((data) => {
-      setHomePage(data);
-    });
-  }, []);
+    if (!store.homePage) {
+      getHomePage().then((data) => {
+        setHomePage(data.attributes);
+        setStore({ ...store, homePage: data.attributes });
+      });
+    } else {
+      setHomePage(store.homePage);
+    }
+  }, [store, setStore]);
 
   if (!homePage) {
     return <>Loading</>;
@@ -23,7 +27,7 @@ export default function HomePage() {
       <h2
         className="home-page__title"
         dangerouslySetInnerHTML={{
-          __html: homePage.attributes.content[0].children[0].text,
+          __html: homePage.content[0].children[0].text,
         }}
       ></h2>
     </div>
