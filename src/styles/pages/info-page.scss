@@ -1,10 +1,15 @@
 .info-page {
-  font-size: $dynamic-font-size;
-  width: 50%;
+  margin-top: 5rem;
+  font-size: $dynamic-font-size-xl;
+  width: 55%;
+
+  @media (max-width: $mobile-breakpoint) {
+    width: 100%;
+  }
 
   &__row {
     display: flex;
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
   }
 
   &__column {
@@ -15,20 +20,40 @@
     }
 
     & + & {
-      margin-left: 2rem;
+      margin-left: 3rem;
     }
   }
 
   &__column-title {
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 
   &__experience-list {}
 
   &__experience-list-item {
     & + & {
-      margin-top: 1.5rem;
+      margin-top: 1.8rem;
+    }
+  }
+
+  &__work-list {}
+
+  &__work-list-item {
+    font-weight: 700;
+
+    & + & {
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__clients-list {}
+
+  &__clients-list-item {
+    font-weight: 700;
+
+    & + & {
+      margin-top: 0.5rem;
     }
   }
 }

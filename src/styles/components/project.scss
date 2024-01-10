@@ -10,6 +10,10 @@
     font-size: $dynamic-font-size;
     flex: 0 0 $sidebar-width;
     margin-left: 1rem;
+
+    @media (max-width: $mobile-breakpoint) {
+      flex: 0 0 $sidebar-width-mobile;
+    }
   }
 
   &__images {
@@ -25,6 +29,10 @@
     font-size: $dynamic-font-size;
     margin-top: 1rem;
     display: flex;
+
+    @media (max-width: $mobile-breakpoint) {
+      flex-direction: column;
+    }
   }
 
   &__description-column {
@@ -32,6 +40,10 @@
 
     & + & {
       margin-left: 2rem;
+
+      @media (max-width: $mobile-breakpoint) {
+        margin-left: 0;
+      }
     }
 
     p {

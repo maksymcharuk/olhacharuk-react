@@ -26,7 +26,9 @@ export default function InfoPage() {
           <ul>
             {infoPage.attributes.links.map((link) => (
               <li key={link.id}>
-                <a href={link.url}>{link.name}</a>
+                <a href={link.url} target="_blank">
+                  {link.name}
+                </a>
               </li>
             ))}
           </ul>
@@ -55,19 +57,23 @@ export default function InfoPage() {
         </div>
         <div className="info-page__column">
           <h4 className="info-page__column-title">Published work</h4>
-          <ul>
+          <ul className="info-page__work-list">
             {infoPage.attributes.published_work.map((work) => (
-              <li key={work.id}>
-                <a href={work.url}>{work.name}</a>
+              <li key={work.id} className="info-page__work-list-item">
+                <a href={work.url} target="_blank">
+                  {work.name}
+                </a>
               </li>
             ))}
           </ul>
         </div>
         <div className="info-page__column">
           <h4 className="info-page__column-title">Clients</h4>
-          <ul>
+          <ul className="info-page__clients-list">
             {infoPage.attributes.clients.map((client) => (
-              <li key={client.id}>{client.value}</li>
+              <li key={client.id} className="info-page__clients-list-item">
+                {client.value}
+              </li>
             ))}
           </ul>
         </div>

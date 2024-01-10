@@ -20,5 +20,9 @@
     flex-direction: column;
     flex: 0 0 $sidebar-width;
     font-weight: 600;
+
+    @media (max-width: $mobile-breakpoint) {
+      flex: 0 0 $sidebar-width-mobile;
+    }
   }
 }

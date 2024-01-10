@@ -6,9 +6,13 @@
   align-items: center;
 
   &__title {
-    font-size: 3.5vw;
+    font-size: calc(1rem + 2.4vw);
     width: 65%;
-    margin: -20vh auto 0;
+    margin: -10vh auto 0;
     font-weight: 600;
+
+    @media (max-width: $mobile-breakpoint) {
+      width: 100%;
+    }
   }
 }

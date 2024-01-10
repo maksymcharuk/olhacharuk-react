@@ -3,5 +3,9 @@ $primary-color: #0d1dff;
 $font-size-base: 1rem;
 $dynamic-font-size: calc(#{$font-size-base} + 0.3vw);
 $dynamic-font-size-l: calc(#{$font-size-base} + 0.5vw);
+$dynamic-font-size-xl: calc(#{$font-size-base} + 0.8vw);
 
 $sidebar-width: 15rem;
+$sidebar-width-mobile: 11rem;
+
+$mobile-breakpoint: 768px;
