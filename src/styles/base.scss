@@ -41,7 +41,7 @@ a {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  margin: 0 1.6rem;
+  margin: 0 $body-shift 0 1.6rem;
 }
 
 .main {

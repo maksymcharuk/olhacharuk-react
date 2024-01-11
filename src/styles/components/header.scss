@@ -16,7 +16,7 @@
 
   &__logo {}
 
-  &__menu {
+  &__right {
     display: flex;
     flex-direction: column;
     flex: 0 0 $sidebar-width;
@@ -25,5 +25,12 @@
     @media (max-width: $mobile-breakpoint) {
       flex: 0 0 $sidebar-width-mobile;
     }
+  }
+  
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    width: 10rem;
   }
 }

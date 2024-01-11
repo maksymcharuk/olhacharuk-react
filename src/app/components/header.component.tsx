@@ -8,13 +8,15 @@ export default function Header() {
           <Link className="header__logo" to={"/"}>
             Olha Charuk
           </Link>
-          <div className="header__menu">
-            <Link className="header__menu-item" to={"/work"}>
-              Work
-            </Link>
-            <Link className="header__menu-item" to={"/info"}>
-              Info
-            </Link>
+          <div className="header__right">
+            <div className="header__menu">
+              <Link className="header__menu-item" to={"/work"}>
+                Work
+              </Link>
+              <Link className="header__menu-item" to={"/info"}>
+                Info
+              </Link>
+            </div>
           </div>
         </div>
       </div>
