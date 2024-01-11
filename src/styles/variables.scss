@@ -1,11 +1,11 @@
 $primary-color: #0d1dff;
 
 $font-size-base: 1rem;
-$dynamic-font-size: calc(#{$font-size-base} + 0.3vw);
-$dynamic-font-size-l: calc(#{$font-size-base} + 0.5vw);
+$dynamic-font-size: 1.15vw;
+$dynamic-font-size-l: 1.2vw;
 $dynamic-font-size-xl: calc(#{$font-size-base} + 0.8vw);
 
-$sidebar-width: 15rem;
+$sidebar-width: 22%;
 $sidebar-width-mobile: 11rem;
 
 $mobile-breakpoint: 768px;

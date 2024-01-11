@@ -1,6 +1,6 @@
 .project {
   display: flex;
-  margin-bottom: 8rem;
+  margin-bottom: 7rem;
 
   &__main {
     flex: 1 1 auto;
@@ -9,11 +9,16 @@
   &__sidebar {
     font-size: $dynamic-font-size;
     flex: 0 0 $sidebar-width;
-    margin-left: 1rem;
+    margin-left: 2rem;
 
     @media (max-width: $mobile-breakpoint) {
       flex: 0 0 $sidebar-width-mobile;
     }
+  }
+
+  &__sidebar-inner {
+    width: 15rem;
+    max-width: 100%;
   }
 
   &__images {

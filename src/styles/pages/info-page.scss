@@ -29,6 +29,16 @@
     margin-bottom: 4rem;
   }
 
+  &__link-list {}
+
+  &__link-list-item {
+    font-weight: 700;
+
+    & + & {
+      margin-top: 0.8rem;
+    }
+  }
+
   &__experience-list {}
 
   &__experience-list-item {

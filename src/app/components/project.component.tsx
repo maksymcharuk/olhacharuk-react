@@ -40,20 +40,24 @@ export default function Project({ project }: IProjectProps) {
         </div>
       </div>
       <div className="project__sidebar">
-        <h4 className="project__name">{project.attributes.name}</h4>
-        <div className="project__company">
-          <div>DESIGNED AT</div>
-          {project.attributes.company}
-        </div>
-        <div className="project__details">
-          {project.attributes.details.map((detail) => (
-            <div key={detail.id} className="project__details-item">
-              <div className="project__details-item-title">{detail.title}</div>
-              <div className="project__details-item-subtitle">
-                {detail.subtitle}
+        <div className="project__sidebar-inner">
+          <h4 className="project__name">{project.attributes.name}</h4>
+          <div className="project__company">
+            <div>DESIGNED AT</div>
+            {project.attributes.company}
+          </div>
+          <div className="project__details">
+            {project.attributes.details.map((detail) => (
+              <div key={detail.id} className="project__details-item">
+                <div className="project__details-item-title">
+                  {detail.title}
+                </div>
+                <div className="project__details-item-subtitle">
+                  {detail.subtitle}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

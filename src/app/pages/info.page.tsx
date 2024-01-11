@@ -27,9 +27,9 @@ export default function InfoPage() {
     <div className="info-page">
       <div className="info-page__row">
         <div className="info-page__column info-page__column--fixed">
-          <ul>
+          <ul className="info-page__link-list">
             {infoPage.links.map((link) => (
-              <li key={link.id}>
+              <li key={link.id} className="info-page__link-list-item">
                 <a href={link.url} target="_blank">
                   {link.name}
                 </a>
