@@ -1,7 +1,6 @@
 .info-page {
-  margin-top: 5rem;
-  font-size: $dynamic-font-size-xl;
-  width: 55%;
+  font-size: $info-page-font-size;
+  width: 50%;
 
   @media (max-width: $mobile-breakpoint) {
     width: 100%;
@@ -9,14 +8,14 @@
 
   &__row {
     display: flex;
-    margin-bottom: 6rem;
+    margin-bottom: 3.5rem;
   }
 
   &__column {
     flex: 1 1 auto;
 
     &--fixed {
-      flex: 0 0 40%;
+      flex: 0 0 25%;
     }
 
     & + & {
@@ -26,7 +25,7 @@
 
   &__column-title {
     font-weight: 700;
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
   }
 
   &__link-list {}
@@ -53,7 +52,7 @@
     font-weight: 700;
 
     & + & {
-      margin-top: 0.5rem;
+      margin-top: $info-page-list-item-margin;
     }
   }
 
@@ -63,7 +62,7 @@
     font-weight: 700;
 
     & + & {
-      margin-top: 0.5rem;
+      margin-top: $info-page-list-item-margin;
     }
   }
 }

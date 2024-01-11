@@ -1,15 +1,17 @@
 .project {
+  $margin-m: 0.4rem;
+  $margin-l: 0.8rem;
+
   display: flex;
-  margin-bottom: 7rem;
+  margin-bottom: 4rem;
 
   &__main {
     flex: 1 1 auto;
   }
 
   &__sidebar {
-    font-size: $dynamic-font-size;
     flex: 0 0 $sidebar-width;
-    margin-left: 2rem;
+    margin-left: 1rem;
 
     @media (max-width: $mobile-breakpoint) {
       flex: 0 0 $sidebar-width-mobile;
@@ -17,7 +19,7 @@
   }
 
   &__sidebar-inner {
-    width: 15rem;
+    width: 10rem;
     max-width: 100%;
   }
 
@@ -31,8 +33,7 @@
   }
 
   &__description {
-    font-size: $dynamic-font-size;
-    margin-top: 1rem;
+    margin-top: 0.8rem;
     display: flex;
 
     @media (max-width: $mobile-breakpoint) {
@@ -52,32 +53,42 @@
     }
 
     p {
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
   }
 
   &__name {
-    font-size: $dynamic-font-size-l;
+    font-size: $project-name-font-size;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: $margin-l;
   }
 
   &__company {
-    margin-bottom: 1rem;
+    margin-bottom: $project-company-margin;
+    margin-bottom: $margin-m;
   }
 
   &__details {
-    margin-bottom: 1.5rem;
+    margin-bottom: $margin-l;
   }
 
   &__details-item {
-    margin-bottom: 1rem;
+    margin-bottom: $margin-m;
   }
 
   &__details-item-title {
     font-weight: 700;
-    margin-bottom: 0.2rem;
   }
 
   &__details-item-subtitle {}
+
+  &__links {
+
+  }
+
+  &__links-item {
+    font-weight: 700;
+    margin-bottom: $margin-m;
+    text-decoration: underline;
+  }
 }

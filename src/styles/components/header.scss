@@ -1,16 +1,17 @@
 .header {
-  background-color: #fff;
+  background-color: $background-color;
   top: 0;
   left: 0;
   position: sticky;
   width: 100%;
+  line-height: 1;
+  font-size: $header-font-size;
   font-weight: 600;
-  font-size: calc(2.9rem + 0.6vw);
 
   &__inner {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: 0.8rem 0;
   }
 
   &__logo {}

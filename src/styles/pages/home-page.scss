@@ -6,10 +6,11 @@
   align-items: center;
 
   &__title {
-    font-size: calc(1rem + 2.4vw);
-    width: 65%;
+    width: 55%;
     margin: -10vh auto 0;
+    font-size: $home-title-font-size;
     font-weight: 600;
+    line-height: 1;
 
     @media (max-width: $mobile-breakpoint) {
       width: 100%;

@@ -30,3 +30,14 @@
        url('assets/fonts/PPNeueMontreal-Medium.woff') format('woff'),
        url('assets/fonts/PPNeueMontreal-Medium.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: "PPNeueMontreal";
+  font-weight: 500;
+  font-style: normal;
+  src: url('assets/fonts/PPNeueMontreal-Regular.eot');
+  src: url('assets/fonts/PPNeueMontreal-Regular.eot') format('embedded-opentype'),
+       url('assets/fonts/PPNeueMontreal-Regular.woff2') format('woff2'),
+       url('assets/fonts/PPNeueMontreal-Regular.woff') format('woff'),
+       url('assets/fonts/PPNeueMontreal-Regular.ttf') format('truetype');
+}

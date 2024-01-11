@@ -58,6 +58,15 @@ export default function Project({ project }: IProjectProps) {
               </div>
             ))}
           </div>
+          <div className="project__links">
+            {project.attributes.links.map((link) => (
+              <div key={link.id} className="project__links-item">
+                <a href={link.url} target="_blank">
+                  {link.name}
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
