@@ -1,6 +1,9 @@
-$primary-color: #0d1dff;
+$primary-color: #0e1dff;
+$white-color: #fff;
+$light-grey-color: #999;
 
-$background-color: #fff;
+$background-color: $white-color;
+$submit-button-color: lighten($light-grey-color, 25%);
 
 $font-size-base: 0.8rem;
 $font-size-m: 0.9rem;
