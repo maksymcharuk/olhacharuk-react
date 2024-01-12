@@ -60,17 +60,19 @@ export default function Gallery({ images }: IGalleryProps) {
           ></button>
         )}
       />
-      <span
-        style={{
-          display: cursorVisible ? "block" : "none",
-          left: cursorX,
-          top: cursorY,
-          transform: "translate(-50%, -50%)",
-        }}
-        className="gallery__cursor"
-      >
-        <img src={cursorImg} alt="cursor" />
-      </span>
+      {images.length > 1 && (
+        <span
+          style={{
+            display: cursorVisible ? "block" : "none",
+            left: cursorX,
+            top: cursorY,
+            transform: "translate(-50%, -50%)",
+          }}
+          className="gallery__cursor"
+        >
+          <img src={cursorImg} alt="cursor" />
+        </span>
+      )}
     </div>
   );
 }
