@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Project from "../components/project.component";
 import { getWorkPage } from "../../services/pages.services";
 import { IWorkPage } from "../../interfaces/work-page.interface";
-import { StoreContext } from "../root";
+import StoreContext from "../contexts/store.context";
 
 export default function WorksPage() {
   const [workPage, setWorkPage] = useState<IWorkPage | null>(null);

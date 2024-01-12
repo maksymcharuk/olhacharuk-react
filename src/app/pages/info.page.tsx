@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { getInfoPage } from "../../services/pages.services";
 import { IInfoPage } from "../../interfaces/info-page.interface";
 import Experience from "../components/experience.component";
-import { StoreContext } from "../root";
+import StoreContext from "../contexts/store.context";
 
 export default function InfoPage() {
   const [infoPage, setInfoPage] = useState<IInfoPage | null>(null);

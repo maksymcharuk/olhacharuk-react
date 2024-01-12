@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { IHomePage } from "../../interfaces/home-page.interface";
 import { getHomePage } from "../../services/pages.services";
-import { StoreContext } from "../root";
+import StoreContext from "../contexts/store.context";
 
 export default function HomePage() {
   const [homePage, setHomePage] = useState<IHomePage | null>(null);
