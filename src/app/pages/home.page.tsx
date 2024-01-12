@@ -19,7 +19,7 @@ export default function HomePage() {
   }, [store, setStore]);
 
   if (!homePage) {
-    return <>Loading</>;
+    return;
   }
 
   return (

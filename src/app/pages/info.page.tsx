@@ -20,7 +20,7 @@ export default function InfoPage() {
   }, [store, setStore]);
 
   if (!infoPage) {
-    return <>Loading</>;
+    return;
   }
 
   return (

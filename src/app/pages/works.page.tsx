@@ -20,7 +20,7 @@ export default function WorksPage() {
   }, [store, setStore]);
 
   if (!workPage) {
-    return <>Loading</>;
+    return;
   }
 
   if (workPage.projects.data.length === 0) {
