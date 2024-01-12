@@ -1,5 +1,7 @@
+import { ReactImageGalleryItem } from "react-image-gallery";
 import { IBaseStrapiEntity } from "../../interfaces/base-strapi-entity.interface";
 import { IProject } from "../../interfaces/project.interface";
+import Gallery from "./gallery.component";
 
 interface IProjectProps {
   project: IBaseStrapiEntity<IProject>;
@@ -23,11 +25,17 @@ export default function Project({ project }: IProjectProps) {
     return [firstPart, secondPart];
   };
 
+  const getImages = (): ReactImageGalleryItem[] => {
+    return project.attributes.images.data.map((image) => ({
+      original: image.attributes.url,
+    }));
+  };
+
   return (
     <div className="project">
       <div className="project__main">
         <div className="project__images">
-          <img src={project.attributes.images.data[0].attributes.url} />
+          <Gallery images={getImages()} />
         </div>
         <div className="project__description">
           {getDescription().map((description, i) => (

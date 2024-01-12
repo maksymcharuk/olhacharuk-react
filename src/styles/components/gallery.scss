@@ -1,0 +1,30 @@
+.gallery {
+  position: relative;
+  overflow: hidden;
+
+  &__nav {
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 50;
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+  }
+
+  &__cursor {
+    position: absolute;
+    height: auto;
+    width: 3rem;
+  }
+}

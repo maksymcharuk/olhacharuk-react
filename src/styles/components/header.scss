@@ -7,6 +7,7 @@
   line-height: 1;
   font-size: $header-font-size;
   font-weight: 600;
+  z-index: 100;
 
   &__inner {
     display: flex;
