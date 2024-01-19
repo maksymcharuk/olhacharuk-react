@@ -26,7 +26,7 @@ export default function PasswordPage() {
   };
 
   if (isVerified) {
-    return <Navigate to="/" />;
+    return <Navigate to="/work" />;
   }
 
   return (
