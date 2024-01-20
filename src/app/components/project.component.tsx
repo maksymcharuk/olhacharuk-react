@@ -34,7 +34,7 @@ export default function Project({ project }: IProjectProps) {
   return (
     <div className="project">
       <div className="project__main">
-        <div className="project__images">
+        <div className="project__images project__images--desktop">
           <Gallery images={getImages()} />
         </div>
         <div className="project__description">
@@ -50,6 +50,9 @@ export default function Project({ project }: IProjectProps) {
       <div className="project__sidebar">
         <div className="project__sidebar-inner">
           <h4 className="project__name">{project.attributes.name}</h4>
+          <div className="project__images project__images--mobile">
+            <Gallery images={getImages()} />
+          </div>
           <div className="project__company">
             <div>DESIGNED AT</div>
             {project.attributes.company}

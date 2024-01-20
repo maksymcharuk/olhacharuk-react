@@ -12,7 +12,7 @@
     font-weight: 600;
     line-height: 1;
 
-    @media (max-width: $mobile-breakpoint) {
+    @media (max-width: $breakpoint-md) {
       width: 100%;
     }
   }

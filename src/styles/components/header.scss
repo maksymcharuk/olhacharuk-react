@@ -13,6 +13,10 @@
     display: flex;
     justify-content: space-between;
     padding: 0.8rem 0;
+
+    @media (max-width: $breakpoint-md) {
+      padding: 1.5rem 0;
+    }
   }
 
   &__logo {}
@@ -23,8 +27,8 @@
     flex: 0 0 $sidebar-width;
     font-weight: 600;
 
-    @media (max-width: $mobile-breakpoint) {
-      flex: 0 0 $sidebar-width-mobile;
+    @media (max-width: $breakpoint-md) {
+      flex: 0 0 auto;
     }
   }
   
@@ -33,5 +37,9 @@
     flex-direction: column;
     font-weight: 600;
     width: 10rem;
+
+    @media (max-width: $breakpoint-md) {
+      width: auto;
+    }
   }
 }

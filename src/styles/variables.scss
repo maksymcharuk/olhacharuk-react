@@ -6,6 +6,8 @@ $background-color: $white-color;
 $submit-button-color: lighten($light-grey-color, 25%);
 
 $font-size-base: 0.8rem;
+$font-size-base-mobile: 1rem;
+
 $font-size-m: 0.9rem;
 $font-size-l: 1.05rem;
 $font-size-xl: 2.1rem;
@@ -13,6 +15,7 @@ $font-size-xl: 2.1rem;
 $header-font-size: $font-size-xl;
 $home-title-font-size: $font-size-xl;
 $info-page-font-size: $font-size-l;
+$info-page-font-size-mobile: 1.2rem;
 $project-name-font-size: $font-size-m;
 
 $body-shift: 7rem;
@@ -20,9 +23,14 @@ $body-shift: 7rem;
 $sidebar-width: 15%;
 $sidebar-width-mobile: 11rem;
 
-$mobile-breakpoint: 768px;
-
 $margin-between-lines: 0.4rem;
 
 $info-page-list-item-margin: $margin-between-lines;
 $project-company-margin: $margin-between-lines;
+
+// Breakpoints
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
