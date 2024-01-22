@@ -26,5 +26,10 @@
     position: absolute;
     height: auto;
     width: 3rem;
+
+    @media (max-width: $breakpoint-md) {
+      // Needed to override inline style
+      display: none !important;
+    }
   }
 }

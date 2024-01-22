@@ -56,6 +56,10 @@ a {
   @media (max-width: $breakpoint-md) {
     margin: 0 $margin-sides;
   }
+
+  @media (min-width: $breakpoint-xxl) {
+    margin-right: 25%;
+  }
 }
 
 .main {
