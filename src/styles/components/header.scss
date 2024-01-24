@@ -36,10 +36,10 @@
     display: flex;
     flex-direction: column;
     font-weight: 600;
-    width: 10rem;
+    width: $sidebar-inner-width;
 
     @media (max-width: $breakpoint-md) {
-      width: auto;
+      width: $sidebar-inner-width-mobile;
     }
   }
 }

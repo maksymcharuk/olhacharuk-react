@@ -24,11 +24,11 @@
   }
 
   &__sidebar-inner {
-    width: 10rem;
+    width: $sidebar-inner-width;
     max-width: 100%;
 
     @media (max-width: $breakpoint-md) {
-      width: auto;
+      width: $sidebar-inner-width-mobile;
     }
   }
 
