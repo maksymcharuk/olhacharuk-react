@@ -3,6 +3,7 @@
   overflow: hidden;
 
   &__nav {
+    cursor: none;
     border: none;
     box-shadow: none;
     background-color: transparent;
@@ -30,6 +31,19 @@
     @media (max-width: $breakpoint-md) {
       // Needed to override inline style
       display: none !important;
+    }
+  }
+
+  .image-gallery-slide .image-gallery-image {
+    width: 100%;
+    height: 46vw;
+    object-fit: cover;
+    max-height: 80vh;
+    overflow: hidden;
+    object-position: center center;
+
+    @media (max-width: $breakpoint-md) {
+      height: 56vw;
     }
   }
 }

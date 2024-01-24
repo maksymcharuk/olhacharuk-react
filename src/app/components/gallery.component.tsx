@@ -43,6 +43,7 @@ export default function Gallery({ images }: IGalleryProps) {
         showBullets={false}
         showFullscreenButton={false}
         showPlayButton={false}
+        lazyLoad={true}
         renderLeftNav={(onClick, disabled) => (
           <button
             className="gallery__nav gallery__nav--left"
