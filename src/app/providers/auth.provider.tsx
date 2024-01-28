@@ -3,19 +3,25 @@ import AuthContext from "../contexts/auth.context";
 import { verifyPassword } from "../../services/auth.service";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { PASSWORD_KEY } from "../../configs/constants";
+import { useSearchParams } from "react-router-dom";
 
 export default function AuthProvider({ children }: PropsWithChildren) {
   const [password, setPassword] = useState<string>("");
   const [isVerified, setIsVerified] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [searchParams] = useSearchParams();
   const { get, set } = useLocalStorage();
+
   const storedPassword = get(PASSWORD_KEY);
+  const urlPassword = searchParams.get(PASSWORD_KEY);
+
+  const passwordToVerify = storedPassword || urlPassword;
 
   useEffect(() => {
-    if (storedPassword) {
-      verifyPassword(storedPassword)
+    if (passwordToVerify) {
+      verifyPassword(passwordToVerify)
         .then(() => {
-          set(PASSWORD_KEY, storedPassword);
+          set(PASSWORD_KEY, passwordToVerify);
           setIsVerified(true);
           setIsLoading(false);
         })
@@ -27,7 +33,7 @@ export default function AuthProvider({ children }: PropsWithChildren) {
       setIsVerified(false);
       setIsLoading(false);
     }
-  }, [storedPassword, set]);
+  }, [passwordToVerify, set]);
 
   if (isLoading) {
     return <></>;

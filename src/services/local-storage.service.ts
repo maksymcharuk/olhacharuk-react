@@ -1,9 +1,11 @@
+export const keyPrefix = "app";
+
 export const setItem = (key: string, value: string | number | object) => {
   if (!localStorage) {
     return;
   }
 
-  localStorage.setItem(key, JSON.stringify(value));
+  localStorage.setItem(`${keyPrefix}-${key}`, JSON.stringify(value));
 };
 
 export const getItem = (key: string) => {
@@ -11,7 +13,7 @@ export const getItem = (key: string) => {
     return null;
   }
 
-  const item = localStorage.getItem(key);
+  const item = localStorage.getItem(`${keyPrefix}-${key}`);
 
   return item? JSON.parse(item): null;
 };
@@ -21,7 +23,7 @@ export const removeItem = (key: string) => {
     return;
   }
 
-  localStorage.removeItem(key);
+  localStorage.removeItem(`${keyPrefix}-${key}`);
 };
 
 export const clear = () => {
