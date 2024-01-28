@@ -1,6 +1,6 @@
 .info-page {
   font-size: $info-page-font-size;
-  width: 55%;
+  width: 65%;
 
   @media (max-width: $breakpoint-md) {
     font-size: $info-page-font-size-mobile;
@@ -8,6 +8,10 @@
 
   @media (max-width: $breakpoint-md) {
     width: 100%;
+  }
+
+  @media (min-width: $breakpoint-xxl) {
+    width: 78%;
   }
 
   &__row {
@@ -23,7 +27,7 @@
     flex: 1 1 auto;
 
     &--fixed {
-      flex: 0 0 25%;
+      flex: 0 0 35%;
     }
 
     & + & {

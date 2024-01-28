@@ -15,5 +15,9 @@
     @media (max-width: $breakpoint-md) {
       width: 100%;
     }
+
+    @media (min-width: $breakpoint-xxl) {
+      width: 72%;
+    }
   }
 }
