@@ -11,7 +11,8 @@ export default function Header() {
           <div className="header__right">
             <div className="header__menu">
               <Link className="header__menu-item" to={"/work"}>
-                Work
+                <span className="header__menu-item-icon"></span>
+                <span>Work</span>
               </Link>
               <Link className="header__menu-item" to={"/info"}>
                 Info

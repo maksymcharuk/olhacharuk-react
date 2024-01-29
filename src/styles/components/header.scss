@@ -42,4 +42,20 @@
       width: $sidebar-inner-width-mobile;
     }
   }
+  
+  &__menu-item {
+    display: flex;
+    align-items: baseline;
+  }
+  
+  &__menu-item-icon {
+    font-size: 1rem;
+    top: -0.2rem;
+    display: block;
+    position: relative;
+  }
+
+  a {
+    text-decoration: none;
+  }
 }
