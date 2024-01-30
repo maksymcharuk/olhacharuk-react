@@ -49,7 +49,7 @@ export default function Project({ project }: IProjectProps) {
       </div>
       <div className="project__sidebar">
         <div className="project__sidebar-inner">
-          <h4 className="project__name">{project.attributes.name}</h4>
+          <h3 className="project__name">{project.attributes.name}</h3>
           <div className="project__images project__images--mobile">
             <Gallery images={getImages()} />
           </div>
@@ -72,7 +72,7 @@ export default function Project({ project }: IProjectProps) {
           <div className="project__links">
             {project.attributes.links.map((link) => (
               <div key={link.id} className="project__links-item">
-                <a href={link.url} target="_blank">
+                <a href={link.url} target="_blank" rel="nofollow">
                   {link.name}
                 </a>
               </div>

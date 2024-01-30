@@ -3,6 +3,7 @@ import Project from "../components/project.component";
 import { getWorkPage } from "../../services/pages.services";
 import { IWorkPage } from "../../interfaces/work-page.interface";
 import StoreContext from "../contexts/store.context";
+import Animated from "../animated";
 
 export default function WorksPage() {
   const [workPage, setWorkPage] = useState<IWorkPage | null>(null);
@@ -28,10 +29,10 @@ export default function WorksPage() {
   }
 
   return (
-    <>
+    <Animated>
       {workPage.projects.data.map((project) => (
         <Project key={project.id} project={project} />
       ))}
-    </>
+    </Animated>
   );
 }
