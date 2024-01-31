@@ -39,6 +39,10 @@ a {
   }
 }
 
+input {
+  border-radius: 0;
+}
+
 #root {
   display: flex;
   flex-direction: column;

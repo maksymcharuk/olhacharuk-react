@@ -5,6 +5,7 @@ import { verifyPassword } from "../../services/auth.service";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { PASSWORD_KEY } from "../../configs/constants";
 import Animated from "../animated";
+import lock from "../../assets/icons/lock.png";
 
 export default function PasswordPage() {
   const [isFormValid, setIsFormValid] = useState<boolean | null>(null);
@@ -34,16 +35,25 @@ export default function PasswordPage() {
     <Animated>
       <div className="password-page">
         <form className="password-page__form" onSubmit={submit}>
-          <input
-            type="password"
-            name="password"
-            className="password-page__input"
-            placeholder="Enter password"
-            onChange={(e) => {
-              setIsFormValid(null);
-              setFormData({ ...formData, password: e.target.value });
-            }}
-          />
+          <div className="password-page__input-wrapper">
+            <input
+              type="password"
+              name="password"
+              className="password-page__input"
+              placeholder="Enter password"
+              onChange={(e) => {
+                setIsFormValid(null);
+                setFormData({ ...formData, password: e.target.value });
+              }}
+            />
+            <div className="password-page__input-icon-wrapper">
+              <img
+                className="password-page__input-icon-img"
+                src={lock}
+                alt="Lock icon"
+              />
+            </div>
+          </div>
           <button type="submit" className="password-page__submit">
             Open
           </button>
