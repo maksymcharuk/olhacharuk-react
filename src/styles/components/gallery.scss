@@ -14,6 +14,10 @@
     height: 100%;
     z-index: 50;
 
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+
     &--left {
       left: 0;
     }
