@@ -40,14 +40,17 @@
 
   .image-gallery-slide .image-gallery-image {
     width: 100%;
-    height: 46vw;
+    height: 48vw;
     object-fit: cover;
-    max-height: 80vh;
     overflow: hidden;
     object-position: center center;
 
     @media (max-width: $breakpoint-md) {
-      height: 56vw;
+      height: 58vw;
+    }
+
+    @media (min-width: $breakpoint-xxl) {
+      height: 38vw;
     }
   }
 }

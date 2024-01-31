@@ -20,8 +20,8 @@ export default function Root() {
             </Route>
             <Route path="/" element={<HomePage />} />
             <Route path="info" element={<InfoPage />} />
+            <Route path="password" element={<PasswordPage />} />
           </Route>
-          <Route path="password" element={<PasswordPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </AnimatePresence>
