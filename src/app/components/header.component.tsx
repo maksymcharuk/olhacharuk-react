@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import AuthContext from "../contexts/auth.context";
+import lock from "../../assets/icons/lock.png";
+import unlock from "../../assets/icons/unlock.png";
 
 const variants = {
   initial: {
@@ -15,6 +19,8 @@ const variants = {
 };
 
 export default function Header() {
+  const { isVerified } = useContext(AuthContext);
+
   return (
     <motion.div
       className="header"
@@ -32,8 +38,14 @@ export default function Header() {
           <div className="header__right">
             <div className="header__menu">
               <Link className="header__menu-item" to={"/work"}>
-                <span className="header__menu-item-icon"></span>
                 <span>Work</span>
+                <span className="header__menu-item-icon-wrapper">
+                  <img
+                    className="header__menu-item-icon-img"
+                    src={isVerified ? unlock : lock}
+                    alt="Verification icon"
+                  />
+                </span>
               </Link>
               <Link className="header__menu-item" to={"/info"}>
                 Info

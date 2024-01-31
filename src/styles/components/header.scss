@@ -48,11 +48,14 @@
     align-items: baseline;
   }
   
-  &__menu-item-icon {
-    font-size: 1rem;
-    top: -0.2rem;
-    display: block;
-    position: relative;
+  &__menu-item-icon-wrapper {
+    width: 0.8rem;
+    margin-left: 0.5rem;
+  }
+
+  &__menu-item-icon-img {
+    height: auto;
+    width: 100%;
   }
 
   a {
