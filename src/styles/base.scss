@@ -57,7 +57,7 @@ input {
   flex: 1 1 auto;
   margin: 0 $body-shift 0 $margin-sides;
 
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: $breakpoint-lg) {
     margin: 0 $margin-sides;
   }
 

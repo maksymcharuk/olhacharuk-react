@@ -6,24 +6,41 @@ $light-grey-color: #999;
 $background-color: $white-color;
 $submit-button-color: lighten($light-grey-color, 25%);
 
+// Base font size for body
 $font-size-base: 0.8rem;
 $font-size-base-mobile: 1rem;
 
+// Base font size for fixed font size elements
+$font-size-base-px: 14px;
+$font-size-base-px-mobile: 14px;
+
+// Font size factors
+$font-size-base-factor: 0.2rem;
+
+// Font sizes
 $font-size-m: 0.9rem;
 $font-size-l: 1.05rem;
 $font-size-xl: 2.1rem;
 
-$header-font-size: calc(14px + 1rem);
+// Font sizes in pixels
+$font-size-m-px: 16px;
+
+// Header
+$header-font-size: calc($font-size-base-px + 1rem);
 $home-title-font-size: $font-size-xl;
+// Info page
 $info-page-font-size: $font-size-l;
 $info-page-font-size-mobile: 1.2rem;
-$project-name-font-size: $font-size-m;
+// Project
+$project-font-size: calc($font-size-base-px + $font-size-base-factor);
+$project-name-font-size: calc($font-size-m-px + $font-size-base-factor);
 
 $body-shift: 7rem;
 
 $sidebar-width: 15%;
 $sidebar-width-mobile: 11rem;
-$sidebar-inner-width: 9rem;
+$sidebar-inner-width: 10rem;
+$sidebar-inner-width-tablet: 12rem;
 $sidebar-inner-width-mobile: 100%;
 
 $margin-between-lines: 0.4rem;

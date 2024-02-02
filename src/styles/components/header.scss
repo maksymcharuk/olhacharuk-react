@@ -37,6 +37,10 @@
     flex-direction: column;
     font-weight: 600;
     width: $sidebar-inner-width;
+    
+    @media (max-width: $breakpoint-lg) {
+      width: $sidebar-inner-width-tablet;
+    }
 
     @media (max-width: $breakpoint-md) {
       width: $sidebar-inner-width-mobile;
