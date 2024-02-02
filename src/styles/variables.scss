@@ -13,7 +13,7 @@ $font-size-m: 0.9rem;
 $font-size-l: 1.05rem;
 $font-size-xl: 2.1rem;
 
-$header-font-size: $font-size-xl;
+$header-font-size: calc(14px + 1rem);
 $home-title-font-size: $font-size-xl;
 $info-page-font-size: $font-size-l;
 $info-page-font-size-mobile: 1.2rem;

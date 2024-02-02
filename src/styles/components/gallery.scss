@@ -30,7 +30,7 @@
   &__cursor {
     position: absolute;
     height: auto;
-    width: 3rem;
+    width: calc(30px + 1rem);
 
     @media (max-width: $breakpoint-md) {
       // Needed to override inline style
