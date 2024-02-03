@@ -18,9 +18,11 @@ body {
   font-weight: 600;
   font-size: $font-size-base;
   line-height: 1.2;
+  overflow-y: scroll;
 
   @media (max-width: $breakpoint-md) {
     font-size: $font-size-base-mobile;
+    overflow-y: auto;
   }
 
   font-feature-settings: "liga" 0, "rlig" 0, "dlig" 0, "hlig" 0, "smcp" 0;
