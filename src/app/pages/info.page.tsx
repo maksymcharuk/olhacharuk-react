@@ -1,13 +1,15 @@
-import { useContext, useEffect, useState } from "react";
+import { MouseEvent, useContext, useEffect, useState } from "react";
 import { getInfoPage } from "../../services/pages.services";
 import { IInfoPage } from "../../interfaces/info-page.interface";
 import Experience from "../components/experience.component";
 import StoreContext from "../contexts/store.context";
 import Animated from "../animated";
+import useAnalyticsEventTracker from "../../hooks/useAnalyticsEventTracker";
 
 export default function InfoPage() {
   const [infoPage, setInfoPage] = useState<IInfoPage | null>(null);
   const { store, setStore } = useContext(StoreContext);
+  const gaEventTracker = useAnalyticsEventTracker("Info");
 
   useEffect(() => {
     if (!store.infoPage) {
@@ -19,6 +21,17 @@ export default function InfoPage() {
       setInfoPage(store.infoPage);
     }
   }, [store, setStore]);
+
+  const onLinkClick = (event: MouseEvent) => {
+    gaEventTracker("Link clicked", event.currentTarget.textContent || "");
+  };
+
+  const onPublishedWorkClick = (event: MouseEvent) => {
+    gaEventTracker(
+      "Published work clicked",
+      event.currentTarget.textContent || ""
+    );
+  };
 
   if (!infoPage) {
     return;
@@ -32,7 +45,12 @@ export default function InfoPage() {
             <ul className="info-page__link-list">
               {infoPage.links.map((link) => (
                 <li key={link.id} className="info-page__link-list-item">
-                  <a href={link.url} target="_blank" rel="nofollow">
+                  <a
+                    href={link.url}
+                    onClick={onLinkClick}
+                    target="_blank"
+                    rel="nofollow"
+                  >
                     {link.name}
                   </a>
                 </li>
@@ -66,7 +84,12 @@ export default function InfoPage() {
             <ul className="info-page__work-list">
               {infoPage.published_work.map((work) => (
                 <li key={work.id} className="info-page__work-list-item">
-                  <a href={work.url} target="_blank" rel="nofollow">
+                  <a
+                    href={work.url}
+                    onClick={onPublishedWorkClick}
+                    target="_blank"
+                    rel="nofollow"
+                  >
                     {work.name}
                   </a>
                 </li>

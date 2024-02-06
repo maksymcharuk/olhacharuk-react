@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import ReactGA from "react-ga";
 import HomePage from "./pages/home.page";
 import WorksPage from "./pages/works.page";
 import InfoPage from "./pages/info.page";
@@ -9,7 +10,16 @@ import AuthProvider from "./providers/auth.provider";
 import Protected from "./protected";
 import App from "./app";
 
+import { GA_TRACKING_ID } from "../configs/constants";
+import { useEffect } from "react";
+
+ReactGA.initialize(GA_TRACKING_ID);
+
 export default function Root() {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   return (
     <AuthProvider>
       <AnimatePresence>

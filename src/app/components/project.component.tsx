@@ -2,12 +2,16 @@ import { ReactImageGalleryItem } from "react-image-gallery";
 import { IBaseStrapiEntity } from "../../interfaces/base-strapi-entity.interface";
 import { IProject } from "../../interfaces/project.interface";
 import Gallery from "./gallery.component";
+import useAnalyticsEventTracker from "../../hooks/useAnalyticsEventTracker";
+import { MouseEvent } from "react";
 
 interface IProjectProps {
   project: IBaseStrapiEntity<IProject>;
 }
 
 export default function Project({ project }: IProjectProps) {
+  const gaEventTracker = useAnalyticsEventTracker("Project");
+
   const getDescription = (): [string[], string[]] => {
     const description = project.attributes.description;
     const descriptionMiddle = Math.ceil(description.length / 2);
@@ -29,6 +33,10 @@ export default function Project({ project }: IProjectProps) {
     return project.attributes.images.data.map((image) => ({
       original: image.attributes.url,
     }));
+  };
+
+  const onProjectLinkClick = (event: MouseEvent) => {
+    gaEventTracker("Link clicked", event.currentTarget.textContent || "");
   };
 
   return (
@@ -72,7 +80,12 @@ export default function Project({ project }: IProjectProps) {
           <div className="project__links">
             {project.attributes.links.map((link) => (
               <div key={link.id} className="project__links-item">
-                <a href={link.url} target="_blank" rel="nofollow">
+                <a
+                  href={link.url}
+                  onClick={onProjectLinkClick}
+                  target="_blank"
+                  rel="nofollow"
+                >
                   {link.name}
                 </a>
               </div>
