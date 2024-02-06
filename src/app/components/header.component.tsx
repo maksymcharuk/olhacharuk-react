@@ -22,14 +22,14 @@ export default function Header() {
   const { isVerified } = useContext(AuthContext);
 
   return (
-    <motion.div
+    <motion.header
       className="header"
       initial="initial"
       animate="final"
       variants={variants}
     >
       <div className="container">
-        <div className="header__inner">
+        <nav className="header__inner">
           <h1>
             <Link className="header__logo" to={"/"}>
               Olha Charuk
@@ -52,8 +52,8 @@ export default function Header() {
               </Link>
             </div>
           </div>
-        </div>
+        </nav>
       </div>
-    </motion.div>
+    </motion.header>
   );
 }
