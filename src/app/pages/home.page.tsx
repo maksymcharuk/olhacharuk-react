@@ -1,8 +1,10 @@
 import { useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { IHomePage } from "../../interfaces/home-page.interface";
 import { getHomePage } from "../../services/pages.services";
 import StoreContext from "../contexts/store.context";
 import Animated from "../animated";
+import { ORIGIN_URL } from "../../configs/constants";
 
 export default function HomePage() {
   const [homePage, setHomePage] = useState<IHomePage | null>(null);
@@ -25,6 +27,10 @@ export default function HomePage() {
 
   return (
     <Animated>
+      <Helmet>
+        <title>Olha Charuk | Home</title>
+        <link rel="canonical" href={ORIGIN_URL} />
+      </Helmet>
       <div className="home-page">
         <p
           className="home-page__title"

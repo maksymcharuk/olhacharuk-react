@@ -10,7 +10,7 @@ interface IProjectProps {
 }
 
 export default function Project({ project }: IProjectProps) {
-  const gaEventTracker = useAnalyticsEventTracker("Project");
+  const gaEventTracker = useAnalyticsEventTracker("project");
 
   const getDescription = (): [string[], string[]] => {
     const description = project.attributes.description;
@@ -36,7 +36,7 @@ export default function Project({ project }: IProjectProps) {
   };
 
   const onProjectLinkClick = (event: MouseEvent) => {
-    gaEventTracker("Link clicked", event.currentTarget.textContent || "");
+    gaEventTracker("link_clicked", event.currentTarget.textContent || "");
   };
 
   return (

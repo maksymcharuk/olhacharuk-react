@@ -1,4 +1,5 @@
 import { FormEvent, useContext, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import AuthContext from "../contexts/auth.context";
 import { Navigate } from "react-router-dom";
 import { verifyPassword } from "../../services/auth.service";
@@ -6,6 +7,7 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { PASSWORD_KEY } from "../../configs/constants";
 import Animated from "../animated";
 import lock from "../../assets/icons/lock.png";
+import { ORIGIN_URL } from "../../configs/constants";
 
 export default function PasswordPage() {
   const [isFormValid, setIsFormValid] = useState<boolean | null>(null);
@@ -33,6 +35,10 @@ export default function PasswordPage() {
 
   return (
     <Animated>
+      <Helmet>
+        <title>Olha Charuk | Password</title>
+        <link rel="canonical" href={`${ORIGIN_URL}/work`} />
+      </Helmet>
       <div className="password-page">
         <form className="password-page__form" onSubmit={submit}>
           <div className="password-page__input-wrapper">

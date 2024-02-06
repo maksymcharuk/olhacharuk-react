@@ -1,5 +1,6 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { HelmetProvider } from "react-helmet-async";
 import ReactGA from "react-ga4";
 import HomePage from "./pages/home.page";
 import WorksPage from "./pages/works.page";
@@ -11,25 +12,38 @@ import Protected from "./protected";
 import App from "./app";
 
 import { GA_TRACKING_ID } from "../configs/constants";
+import { useEffect } from "react";
 
 ReactGA.initialize(GA_TRACKING_ID);
 
 export default function Root() {
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.send({
+      hitType: "pageview",
+      page: location.pathname + location.search,
+      title: document.title,
+    });
+  }, [location]);
+
   return (
-    <AuthProvider>
-      <AnimatePresence>
-        <Routes>
-          <Route element={<App />}>
-            <Route element={<Protected />}>
-              <Route path="work" element={<WorksPage />} />
+    <HelmetProvider>
+      <AuthProvider>
+        <AnimatePresence>
+          <Routes>
+            <Route element={<App />}>
+              <Route element={<Protected />}>
+                <Route path="work" element={<WorksPage />} />
+              </Route>
+              <Route path="/" element={<HomePage />} />
+              <Route path="info" element={<InfoPage />} />
+              <Route path="password" element={<PasswordPage />} />
             </Route>
-            <Route path="/" element={<HomePage />} />
-            <Route path="info" element={<InfoPage />} />
-            <Route path="password" element={<PasswordPage />} />
-          </Route>
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </AnimatePresence>
-    </AuthProvider>
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </AnimatePresence>
+      </AuthProvider>
+    </HelmetProvider>
   );
 }

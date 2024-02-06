@@ -1,15 +1,17 @@
 import { MouseEvent, useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { getInfoPage } from "../../services/pages.services";
 import { IInfoPage } from "../../interfaces/info-page.interface";
 import Experience from "../components/experience.component";
 import StoreContext from "../contexts/store.context";
 import Animated from "../animated";
 import useAnalyticsEventTracker from "../../hooks/useAnalyticsEventTracker";
+import { ORIGIN_URL } from "../../configs/constants";
 
 export default function InfoPage() {
   const [infoPage, setInfoPage] = useState<IInfoPage | null>(null);
   const { store, setStore } = useContext(StoreContext);
-  const gaEventTracker = useAnalyticsEventTracker("Info");
+  const gaEventTracker = useAnalyticsEventTracker("info");
 
   useEffect(() => {
     if (!store.infoPage) {
@@ -23,12 +25,12 @@ export default function InfoPage() {
   }, [store, setStore]);
 
   const onLinkClick = (event: MouseEvent) => {
-    gaEventTracker("Link clicked", event.currentTarget.textContent || "");
+    gaEventTracker("link_clicked", event.currentTarget.textContent || "");
   };
 
   const onPublishedWorkClick = (event: MouseEvent) => {
     gaEventTracker(
-      "Published work clicked",
+      "published_work_clicked",
       event.currentTarget.textContent || ""
     );
   };
@@ -39,6 +41,10 @@ export default function InfoPage() {
 
   return (
     <Animated>
+      <Helmet>
+        <title>Olha Charuk | Info</title>
+        <link rel="canonical" href={`${ORIGIN_URL}/info`} />
+      </Helmet>
       <div className="info-page">
         <div className="info-page__row">
           <div className="info-page__column info-page__column--fixed">
