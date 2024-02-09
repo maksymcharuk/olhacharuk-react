@@ -23,6 +23,7 @@ $font-size-base-factor: 0.2rem;
 $font-size-m: 0.9rem;
 $font-size-l: 1.05rem;
 $font-size-xl: 2.1rem;
+$font-size-xxl: 2.3rem;
 
 // Font sizes in pixels
 $font-size-m-px: 16px;
@@ -31,6 +32,7 @@ $font-size-m-px: 16px;
 $header-font-size: calc($font-size-base-px + 1rem);
 // Home page
 $home-title-font-size: $font-size-xl;
+$home-title-font-size-tablet: $font-size-xxl;
 // Info page
 $info-page-font-size: $font-size-l;
 $info-page-font-size-mobile: 1.2rem;

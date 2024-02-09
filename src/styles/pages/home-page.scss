@@ -16,6 +16,10 @@
       width: 100%;
     }
 
+    @media (max-width: $breakpoint-lg) {
+      font-size: $home-title-font-size-tablet;
+    }
+
     @media (min-width: $breakpoint-xxl) {
       width: 72%;
     }
