@@ -7,6 +7,18 @@ html {
   @media (max-width: $breakpoint-md) {
     font-size: 4vw;
   }
+
+   /* WebKit/Blink Browsers */
+  ::selection {
+    background: $selection-bg-color;
+    color: $selection-text-color;
+  }
+
+  /* Gecko Browsers */
+  ::-moz-selection {
+    background: $selection-bg-color;
+    color: $selection-text-color;
+  }
 }
 
 body {

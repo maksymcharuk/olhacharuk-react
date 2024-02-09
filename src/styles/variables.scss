@@ -5,6 +5,8 @@ $light-grey-color: #999;
 
 $background-color: $white-color;
 $submit-button-color: lighten($light-grey-color, 25%);
+$selection-text-color: $white-color;
+$selection-bg-color: $primary-color;
 
 // Base font size for body
 $font-size-base: 0.8rem;
@@ -27,6 +29,7 @@ $font-size-m-px: 16px;
 
 // Header
 $header-font-size: calc($font-size-base-px + 1rem);
+// Home page
 $home-title-font-size: $font-size-xl;
 // Info page
 $info-page-font-size: $font-size-l;
