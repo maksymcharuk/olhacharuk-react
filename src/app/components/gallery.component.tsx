@@ -44,6 +44,7 @@ export default function Gallery({ images }: IGalleryProps) {
         showFullscreenButton={false}
         showPlayButton={false}
         lazyLoad={true}
+        showIndex={true}
         renderLeftNav={(onClick, disabled) => (
           <button
             className="gallery__nav gallery__nav--left"
@@ -62,17 +63,19 @@ export default function Gallery({ images }: IGalleryProps) {
         )}
       />
       {images.length > 1 && (
-        <span
-          style={{
-            display: cursorVisible ? "block" : "none",
-            left: cursorX,
-            top: cursorY,
-            transform: "translate(-50%, -50%)",
-          }}
-          className="gallery__cursor"
-        >
-          <img src={cursorImg} alt="cursor" />
-        </span>
+        <>
+          <span
+            style={{
+              display: cursorVisible ? "block" : "none",
+              left: cursorX,
+              top: cursorY,
+              transform: "translate(-50%, -50%)",
+            }}
+            className="gallery__cursor"
+          >
+            <img src={cursorImg} alt="cursor" />
+          </span>
+        </>
       )}
     </div>
   );

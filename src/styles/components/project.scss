@@ -56,6 +56,7 @@
 
       @media (max-width: $breakpoint-md) {
         display: block;
+        margin-bottom: $gallery-negative-margin-mobile;
       }
     }
   

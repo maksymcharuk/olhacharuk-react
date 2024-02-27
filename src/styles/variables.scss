@@ -3,6 +3,7 @@ $white-color: #fff;
 $black-color: #000;
 $light-grey-color: #999;
 
+$text-color: $black-color;
 $background-color: $white-color;
 $submit-button-color: lighten($light-grey-color, 25%);
 $selection-text-color: $white-color;
@@ -39,6 +40,11 @@ $info-page-font-size-mobile: 1.2rem;
 // Project
 $project-font-size: calc($font-size-base-px + $font-size-base-factor);
 $project-name-font-size: calc($font-size-m-px + $font-size-base-factor);
+
+// Gallery
+$index-text-font-size: $project-font-size;
+$index-text-padding-vertical: 0.6rem;
+$gallery-negative-margin-mobile: calc(($index-text-font-size + $index-text-padding-vertical) * -1);
 
 $body-shift: 7rem;
 

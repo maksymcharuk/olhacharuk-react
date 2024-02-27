@@ -57,4 +57,18 @@
       height: 37vw;
     }
   }
+
+  .image-gallery-index {
+    color: $text-color;
+    background-color: transparent;
+    font-size: $index-text-font-size;
+    padding: $index-text-padding-vertical 0;
+    position: relative;
+    display: inline-flex;
+    float: right;
+
+    @media (min-width: $breakpoint-md) {
+      display: none;
+    }
+  }
 }
