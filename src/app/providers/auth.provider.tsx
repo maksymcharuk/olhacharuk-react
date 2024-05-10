@@ -18,21 +18,18 @@ export default function AuthProvider({ children }: PropsWithChildren) {
   const passwordToVerify = storedPassword || urlPassword;
 
   useEffect(() => {
-    if (passwordToVerify) {
-      verifyPassword(passwordToVerify)
-        .then(() => {
+    verifyPassword(passwordToVerify)
+      .then(() => {
+        if (passwordToVerify) {
           set(PASSWORD_KEY, passwordToVerify);
-          setIsVerified(true);
-          setIsLoading(false);
-        })
-        .catch(() => {
-          setIsVerified(false);
-          setIsLoading(false);
-        });
-    } else {
-      setIsVerified(false);
-      setIsLoading(false);
-    }
+        }
+        setIsVerified(true);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        setIsVerified(false);
+        setIsLoading(false);
+      });
   }, [passwordToVerify, set]);
 
   if (isLoading) {
