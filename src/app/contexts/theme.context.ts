@@ -7,7 +7,7 @@ export interface IThemeContext {
 }
 
 const ThemeContext = createContext<IThemeContext>({
-  theme: "light",
+  theme: "dark", // default theme
   toggleTheme: () => {},
 });
 
