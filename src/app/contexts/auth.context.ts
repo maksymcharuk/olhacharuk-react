@@ -4,12 +4,12 @@ export interface IAuthContext {
   password: string;
   isVerified: boolean;
   isLoading: boolean;
-  setPassword: (_password: string) => void,
-  setIsVerified: (_isVerified: boolean) => void,
+  setPassword: (_password: string) => void;
+  setIsVerified: (_isVerified: boolean) => void;
 }
 
 const AuthContext = createContext<IAuthContext>({
-  password: '',
+  password: "",
   isVerified: false,
   isLoading: true,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

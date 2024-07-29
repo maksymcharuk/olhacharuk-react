@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Header from "./components/header.component";
 import { useState } from "react";
+import Header from "./components/header.component";
+import ThemeToggle from "./components/theme-toggle.component";
 import StoreContext, {
   IStore,
   STORE_DEFAULT_VALUE,
@@ -14,6 +15,7 @@ export default function App() {
       <Header />
       <main className="main container">
         <Outlet />
+        <ThemeToggle />
       </main>
     </StoreContext.Provider>
   );

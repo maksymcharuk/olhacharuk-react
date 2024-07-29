@@ -1,13 +1,17 @@
-$primary-color: #0e1dff;
-$white-color: #fff;
-$black-color: #000;
-$light-grey-color: #999;
+$primary-color: var(--primary-color);
+$white-color: var(--white-color);
+$black-color: var(--black-color);
+$light-grey-color: var(--light-grey-color);
 
-$text-color: $black-color;
-$background-color: $white-color;
-$submit-button-color: lighten($light-grey-color, 25%);
-$selection-text-color: $white-color;
-$selection-bg-color: $primary-color;
+$text-color: var(--text-color);
+$background-color: var(--background-color);
+$button-bg-color: var(--button-bg-color);
+$button-text-color: var(--button-text-color);
+$selection-text-color: var(--selection-text-color);
+$selection-bg-color: var(--selection-bg-color);
+
+// Core
+$controls-paddings: 0.6rem 1rem;
 
 // Base font size for body
 $font-size-base: 0.8rem;

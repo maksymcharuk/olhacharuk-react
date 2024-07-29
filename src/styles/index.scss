@@ -4,6 +4,10 @@
 @import "./typography.scss";
 @import "./base.scss";
 
+// Core
+@import "./core/buttons.scss";
+@import "./core/controls.scss";
+
 // Components
 @import "./components/header.scss";
 @import "./components/project.scss";
@@ -11,6 +15,7 @@
 @import "./components/position.scss";
 @import "./components/gallery.scss";
 @import "./components/animated.scss";
+@import "./components/theme-toggle.scss";
 
 // Pages
 @import "./pages/home-page.scss";
@@ -19,3 +24,7 @@
 
 // Utils
 @import "./utils.scss";
+
+// Themes
+@import "./themes/dark.scss";
+@import "./themes/light.scss";

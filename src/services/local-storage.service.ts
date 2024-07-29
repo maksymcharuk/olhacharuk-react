@@ -8,14 +8,14 @@ export const setItem = (key: string, value: string | number | object) => {
   localStorage.setItem(`${keyPrefix}-${key}`, JSON.stringify(value));
 };
 
-export const getItem = (key: string) => {
+export const getItem = <T = string>(key: string): T | null => {
   if (!localStorage) {
     return null;
   }
 
   const item = localStorage.getItem(`${keyPrefix}-${key}`);
 
-  return item? JSON.parse(item): null;
+  return item ? JSON.parse(item) : null;
 };
 
 export const removeItem = (key: string) => {
