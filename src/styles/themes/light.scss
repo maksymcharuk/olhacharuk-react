@@ -1,0 +1,19 @@
+[data-theme="light"] {
+  --primary-color: #0e1dff;
+  --white-color: #fff;
+  --black-color: #000;
+  --light-grey-color: #999;
+
+  // General
+  --selection-text-color: var(--text-color);
+  --selection-bg-color: var(--primary-color);
+  --text-color: var(--black-color);
+  --background-color: var(--white-color);
+  // Controls
+  --control-text-color: var(--black-color);
+  --control-bg-color: var(--white-color);
+  --control-border-color: var(--black-color);
+  // Buttons
+  --button-text-color: var(--white-color);
+  --button-bg-color: var(--black-color);
+}

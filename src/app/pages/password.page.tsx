@@ -41,26 +41,22 @@ export default function PasswordPage() {
       </Helmet>
       <div className="password-page">
         <form className="password-page__form" onSubmit={submit}>
-          <div className="password-page__input-wrapper">
+          <div className="control">
             <input
               type="password"
               name="password"
-              className="password-page__input"
+              className="control__input"
               placeholder="Enter password"
               onChange={(e) => {
                 setIsFormValid(null);
                 setFormData({ ...formData, password: e.target.value });
               }}
             />
-            <div className="password-page__input-icon-wrapper">
-              <img
-                className="password-page__input-icon-img"
-                src={lock}
-                alt="Lock icon"
-              />
+            <div className="control__icon-wrapper">
+              <img className="control__icon" src={lock} alt="Lock icon" />
             </div>
           </div>
-          <button type="submit" className="password-page__submit">
+          <button type="submit" className="btn password-page__submit">
             Open
           </button>
         </form>

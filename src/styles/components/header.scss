@@ -8,6 +8,7 @@
   font-size: $header-font-size;
   font-weight: 600;
   z-index: 100;
+  transition: var(--theme-transition);
 
   &__inner {
     display: flex;

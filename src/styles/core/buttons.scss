@@ -1,0 +1,22 @@
+.btn {
+  font-size: $font-size-base;
+  background-color: $button-bg-color;
+  border: 0;
+  color: $button-text-color;
+  padding: $controls-paddings;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-color;
+  }
+
+  &--icon {
+    appearance: none;
+    background-color: transparent;
+    padding: 0;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}

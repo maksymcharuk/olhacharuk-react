@@ -1,3 +1,7 @@
+:root {
+  --theme-transition: background-color .3s, color .3s;
+}
+
 html {
   display: flex;
   flex-direction: column;
@@ -32,6 +36,7 @@ body {
   font-size: $font-size-base;
   line-height: 1.2;
   overflow-y: scroll;
+  transition: var(--theme-transition);
 
   @media (max-width: $breakpoint-lg) {
     font-size: $font-size-base-mobile;
@@ -86,6 +91,7 @@ input {
 
   margin-top: $margin;
   margin-bottom: $margin;
+  transition: var(--theme-transition);
 }
 
 .centered {
