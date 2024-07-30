@@ -7,13 +7,17 @@
 
   &__title {
     width: 60%;
-    margin: -10vh auto 0;
+    margin: 0 auto;
     font-size: $home-title-font-size;
     font-weight: 600;
     line-height: 1;
 
     @media (max-width: $breakpoint-md) {
       width: 100%;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      margin-top: -10vh;
     }
 
     @media (max-width: $breakpoint-lg) {
