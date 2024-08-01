@@ -7,6 +7,7 @@ import WorksPage from "./pages/works.page";
 import InfoPage from "./pages/info.page";
 import PasswordPage from "./pages/password.page";
 import ErrorPage from "./pages/error.page";
+import ProjectPage from "./pages/project.page";
 import AuthProvider from "./providers/auth.provider";
 import Protected from "./protected";
 import App from "./app";
@@ -35,6 +36,7 @@ export default function Root() {
             <Route element={<App />}>
               <Route element={<Protected />}>
                 <Route path="work" element={<WorksPage />} />
+                <Route path="work/:slug" element={<ProjectPage />} />
               </Route>
               <Route path="/" element={<HomePage />} />
               <Route path="info" element={<InfoPage />} />

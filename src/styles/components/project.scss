@@ -67,6 +67,13 @@
     }
   }
 
+  &__image {
+
+    & + & {
+      margin-top: 0.8rem;
+    }
+  }
+
   &__description {
     margin-top: 0.8rem;
     display: flex;
@@ -113,12 +120,6 @@
 
   &__details-item-title {
     font-weight: 700;
-  }
-
-  &__details-item-subtitle {}
-
-  &__links {
-
   }
 
   &__links-item {

@@ -1,0 +1,133 @@
+.project-page {
+  $margin-m: 0.4rem;
+  $margin-l: 0.8rem;
+
+  font-size: $project-font-size;
+
+  &__wrapper {
+    display: flex;
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__main {
+    flex: 1 1 auto;
+    margin-bottom: 0.8rem;
+  }
+
+  &__sidebar {
+    flex: 0 0 $sidebar-width;
+    margin-left: 1rem;
+    margin-bottom: 0.8rem;
+
+    @media (max-width: $breakpoint-md) {
+      flex: 0 0 $sidebar-width-mobile;
+      margin-left: 0;
+    }
+  }
+
+  &__sidebar-inner {
+    width: $sidebar-inner-width;
+    max-width: 100%;
+
+    @media (max-width: $breakpoint-lg) {
+      width: $sidebar-inner-width-tablet;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      width: $sidebar-inner-width-mobile;
+    }
+  }
+
+  &__images {
+
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 1rem;
+    }
+
+    &--desktop {
+      display: block;
+
+      @media (max-width: $breakpoint-md) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @media (max-width: $breakpoint-md) {
+        display: block;
+        margin-bottom: $gallery-negative-margin-mobile;
+      }
+    }
+  
+    img {
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__image {
+
+    & + & {
+      margin-top: 0.8rem;
+    }
+  }
+
+  &__description {
+    display: flex;
+
+    @media (max-width: $breakpoint-lg) {
+      flex-direction: column;
+    }
+  }
+
+  &__description-column {
+    flex: 1 1 50%;
+
+    & + & {
+      margin-left: 2rem;
+
+      @media (max-width: $breakpoint-lg) {
+        margin-left: 0;
+      }
+    }
+
+    p {
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  &__name {
+    font-size: $project-name-font-size;
+    font-weight: 700;
+    margin-bottom: $margin-l;
+  }
+
+  &__company {
+    margin-bottom: $project-company-margin;
+    margin-bottom: $margin-m;
+  }
+
+  &__details {
+    margin-bottom: $margin-l;
+  }
+
+  &__details-item {
+    margin-bottom: $margin-m;
+  }
+
+  &__details-item-title {
+    font-weight: 700;
+  }
+
+  &__links-item {
+    font-weight: 700;
+    margin-bottom: $margin-m;
+    text-decoration: underline;
+  }
+}

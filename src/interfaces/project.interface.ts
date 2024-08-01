@@ -5,11 +5,11 @@ import { IListKeyValueItem } from "./list-key-value.interface";
 import { IRichBlock } from "./rich-block.interface";
 
 export type IProject = {
-  id: number;
   name: string;
   description: IRichBlock;
   company: string;
   images: IBaseStrapiDataCollection<IImage>;
   details: IListKeyValueItem[];
   links: ILink[];
+  slug: string;
 };
