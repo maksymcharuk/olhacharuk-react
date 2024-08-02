@@ -43,7 +43,7 @@ export default function ProjectPage() {
     <Animated>
       <Helmet>
         <title>Olha Charuk | Info</title>
-        <link rel="canonical" href={`${ORIGIN_URL}/project/${project.slug}`} />
+        <link rel="canonical" href={`${ORIGIN_URL}/work/${project.slug}`} />
       </Helmet>
       <div className="project-page">
         <div className="project-page__wrapper">
