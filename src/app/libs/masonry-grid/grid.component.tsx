@@ -1,32 +1,51 @@
 import React, { PropsWithChildren, useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
 import GridItem from "./grid-item.component";
-import { Rect } from "./types";
+import { Rect, Breakpoint } from "./types";
 
 interface IGridProps {
-  columnWidth: number | string;
+  columnWidth?: number | string;
   gap: number;
   horizontal?: boolean;
+  breakpoints?: Breakpoint[];
 }
 
 export default function Grid({
   columnWidth,
   gap,
   horizontal,
+  breakpoints,
   children,
 }: PropsWithChildren<IGridProps>) {
   const [ref, bounds] = useMeasure();
   const [rects, setRects] = useState<Rect[]>([]);
   const [gridHeight, setGridHeight] = useState(0);
   const [childHeights, setChildHeights] = useState<number[]>([]);
+  const [currentColumnWidth, setCurrentColumnWidth] = useState<
+    number | string | undefined
+  >(columnWidth);
 
   useEffect(() => {
     updateLayout();
   }, [bounds.width, children, childHeights]);
 
   useEffect(() => {
-    console.log("gridHeight", gridHeight);
-  }, [gridHeight]);
+    if (breakpoints) {
+      const sortedBreakpoints = [...breakpoints].sort(
+        (a, b) => a.minWidth - b.minWidth
+      );
+      const matchedBreakpoint = sortedBreakpoints
+        .reverse()
+        .find((bp) => bounds.width >= bp.minWidth);
+      if (matchedBreakpoint) {
+        setCurrentColumnWidth(
+          columnWidth
+            ? columnWidth
+            : `${Math.round(100 / matchedBreakpoint.columnsNumber)}%`
+        );
+      }
+    }
+  }, [bounds.width, breakpoints, columnWidth]);
 
   function getColumnLengthAndWidth(
     containerWidth: number,
@@ -62,7 +81,7 @@ export default function Grid({
     const containerWidth = bounds.width;
     const [maxColumn, singleColumnWidth] = getColumnLengthAndWidth(
       containerWidth,
-      columnWidth,
+      currentColumnWidth || columnWidth || 1,
       gap
     );
     const columnHeights = createArray(0, maxColumn);

@@ -15,6 +15,21 @@ export default function WorksPage() {
   const [gridView, setGridView] = useState(true);
   const { store, setStore } = useContext(StoreContext);
 
+  const breakpoints = [
+    {
+      minWidth: 0,
+      columnsNumber: 1,
+    },
+    {
+      minWidth: 768,
+      columnsNumber: 2,
+    },
+    {
+      minWidth: 992,
+      columnsNumber: 3,
+    },
+  ];
+
   useEffect(() => {
     if (!store.workPage) {
       getWorkPage().then((data) => {
@@ -40,23 +55,9 @@ export default function WorksPage() {
         <title>Olha Charuk | Work</title>
         <link rel="canonical" href={`${ORIGIN_URL}/work`} />
       </Helmet>
-      {/* <Grid columnWidth={200} gap={20} horizontal={true}>
-        <div style={{ height: "200px", backgroundColor: "red" }}>Item 1</div>
-        <div style={{ height: "150px", backgroundColor: "blue" }}>Item 2</div>
-        <div style={{ height: "250px", backgroundColor: "green" }}>Item 3</div>
-        <div style={{ height: "200px", backgroundColor: "yellow" }}>Item 4</div>
-        <div style={{ height: "170px", backgroundColor: "purple" }}>Item 5</div>
-        <div style={{ height: "230px", backgroundColor: "orange" }}>Item 6</div>
-        <div style={{ height: "190px", backgroundColor: "pink" }}>Item 7</div>
-        <div style={{ height: "220px", backgroundColor: "gray" }}>Item 8</div>
-        <div style={{ height: "180px", backgroundColor: "brown" }}>Item 9</div>
-        <div style={{ height: "240px", backgroundColor: "#454642" }}>
-          Item 10
-        </div>
-      </Grid> */}
 
       {gridView ? (
-        <Grid columnWidth={300} gap={20} horizontal={true}>
+        <Grid gap={20} horizontal={true} breakpoints={breakpoints}>
           {workPage.projects.data.map((project) => (
             <ProjectCell key={project.id} project={project} />
           ))}
@@ -68,17 +69,6 @@ export default function WorksPage() {
           ))}
         </>
       )}
-
-      {/* <Grid columnWidth={300} gap={20} horizontal={true}>
-          {workPage.projects.data.map((project) => (
-            <ProjectCell key={project.id} project={project} />
-          ))}
-        </Grid>
-
-        
-        {workPage.projects.data.map((project) => (
-          <Project key={project.id} project={project} />
-        ))} */}
     </Animated>
   );
 }
