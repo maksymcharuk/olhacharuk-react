@@ -1,0 +1,41 @@
+.project-cell {
+  $margin-m: 0.4rem;
+  $margin-l: 0.8rem;
+
+  display: flex;
+  font-size: $project-font-size;
+  margin-bottom: 1rem;
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column-reverse;
+  }
+
+  &__main {
+    flex: 1 1 auto;
+  }
+
+  &__images {
+    margin-bottom: 1rem;
+
+    img {
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__description {
+    margin-top: 0.8rem;
+    display: flex;
+
+    @media (max-width: $breakpoint-lg) {
+      flex-direction: column;
+    }
+  }
+
+  &__name {
+    font-size: $project-name-font-size;
+    font-weight: 700;
+    margin-bottom: $margin-l;
+  }
+}
