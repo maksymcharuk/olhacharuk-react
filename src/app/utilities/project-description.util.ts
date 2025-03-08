@@ -3,6 +3,7 @@ import { IRichBlock } from "../../interfaces/rich-block.interface";
 export const getProjectDescription = (
   description: IRichBlock
 ): [string[], string[]] => {
+  console.log(description);
   const descriptionMiddle = Math.ceil(description.length / 2);
   const firstDescriptionsPart = description.slice(0, descriptionMiddle);
   const secondDescriptionsPart = description.slice(descriptionMiddle);
