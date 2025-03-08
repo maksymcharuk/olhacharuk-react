@@ -8,7 +8,7 @@ interface IProjectProps {
 }
 
 export default function ProjectCell({ project }: IProjectProps) {
-  const imageUrl = project.attributes.images.data[0].attributes.url;
+  const imageUrl = project.attributes.images_grid.data[0].attributes.url;
 
   return (
     <div className="project-cell">
