@@ -42,7 +42,7 @@ export default function ProjectPage() {
   return (
     <Animated>
       <Helmet>
-        <title>Olha Charuk | Info</title>
+        <title>Olha Charuk | {project.name}</title>
         <link rel="canonical" href={`${ORIGIN_URL}/work/${project.slug}`} />
       </Helmet>
       <div className="project-page">
