@@ -1,19 +1,21 @@
 import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { useSearchParams } from "react-router-dom";
 import Project from "../components/project.component";
 import { getWorkPage } from "../../services/pages.services";
 import { IWorkPage } from "../../interfaces/work-page.interface";
 import StoreContext from "../contexts/store.context";
 import Animated from "../animated";
 import { ORIGIN_URL } from "../../configs/constants";
-import GridItem from "../libs/masonry-grid/grid-item.component";
 import Grid from "../libs/masonry-grid/grid.component";
 import ProjectCell from "../components/project-cell.component";
 
 export default function WorksPage() {
   const [workPage, setWorkPage] = useState<IWorkPage | null>(null);
-  const [gridView, setGridView] = useState(true);
+  const [searchParams] = useSearchParams();
   const { store, setStore } = useContext(StoreContext);
+
+  const gridView = searchParams.get("gridView") === "true";
 
   const breakpoints = [
     {
@@ -27,6 +29,10 @@ export default function WorksPage() {
     {
       minWidth: 992,
       columnsNumber: 3,
+    },
+    {
+      minWidth: 1200,
+      columnsNumber: 4,
     },
   ];
 
