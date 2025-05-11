@@ -1,0 +1,16 @@
+.markdown {
+  b,
+  strong {
+    font-weight: 700;
+  }
+  
+  i, em {
+    font-style: italic;
+  }
+  
+  ul {
+    list-style-type: circle;
+    margin: 0;
+    padding: 0 0 0 1.6rem;
+  }
+}

@@ -24,7 +24,7 @@ export default function ProjectCell({ project }: IProjectProps) {
             {project.attributes.name}
           </Link>
         </h3>
-        <div className="project-cell__description">
+        <div className="project-cell__description markdown">
           <Markdown>{project.attributes.description_short}</Markdown>
         </div>
       </div>
