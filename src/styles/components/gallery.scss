@@ -38,23 +38,27 @@
     }
   }
 
-  .image-gallery-slide .image-gallery-image {
-    width: 100%;
-    height: 46vw;
-    object-fit: cover;
+  .image-gallery-slide {
     overflow: hidden;
-    object-position: center center;
 
-    @media (max-width: $breakpoint-lg) {
-      height: 49vw;
-    }
-
-    @media (max-width: $breakpoint-md) {
-      height: 56vw;
-    }
-
-    @media (min-width: $breakpoint-xxl) {
-      height: 37vw;
+    .image-gallery-image {
+      width: 100%;
+      height: 46vw;
+      object-fit: cover;
+      overflow: hidden;
+      object-position: center center;
+  
+      @media (max-width: $breakpoint-lg) {
+        height: 49vw;
+      }
+  
+      @media (max-width: $breakpoint-md) {
+        height: 56vw;
+      }
+  
+      @media (min-width: $breakpoint-xxl) {
+        height: 37vw;
+      }
     }
   }
 
